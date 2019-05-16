@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	create_buff(argv[1]);
-	free_stack(&stack);
 	return(EXIT_SUCCESS)
 }
 
