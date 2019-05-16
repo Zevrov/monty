@@ -24,6 +24,7 @@ void free_stack(stack_t **head)
 	if (!head)
 		return;
 	free(argument_container.input);
+	fclose(argument_container.file);
 	while (*head != NULL)
 	{
 		temp = (*head)->next;
