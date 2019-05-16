@@ -17,7 +17,7 @@ void op_sub(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	temp = *stack;
-	math = temp->n - temp->next->n;
+	math = temp->next->n - temp->n;
 	op_pop(stack, line_number);
 	(*stack)->n = math;
 }
