@@ -5,7 +5,7 @@
 * @stack: the memory
 * @line_number: the line
 */
-void op_sub(stack_t **stack, unsigned int line_number)
+void op_div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
 	int math = 0;
