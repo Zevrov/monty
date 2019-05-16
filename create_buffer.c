@@ -40,5 +40,4 @@ int create_buff(char *file_name)
 		line++;
 	}
 	free_stack(&stack);
-	return (0);
 }
