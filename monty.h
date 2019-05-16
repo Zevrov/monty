@@ -47,7 +47,7 @@ typedef struct instruction_s
  * @stack_queue: the stack or queue
  * @file: the file
  */
-struct Global_struct
+typedef struct Global_struct
 {
 	char *arguments;
 	char *input;
