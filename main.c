@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	create_buff(argv[1]);
-	return(EXIT_SUCCESS)
+	return(EXIT_SUCCESS);
 }
 
 void free_stack(stack_t **head)
@@ -60,7 +60,7 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		}
 		index++;
 	}
-	printf("L%d: unknown instruction %s\n", line_num, command);
+	printf("L%d: unknown instruction %s\n", line_number, command);
 	free_stack(stack);
 	exit(EXIT_FAILURE);
 }

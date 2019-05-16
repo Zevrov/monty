@@ -39,7 +39,7 @@ int create_buff(char *file_name)
 		get_opcode(&stack, line, command);
 		line++;
 	}
-	free_stack(&stack)
+	free_stack(&stack);
 	fclose(file_name);
 	return (0);
 }
