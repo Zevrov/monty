@@ -22,11 +22,14 @@ void free_stack(stack_t **head)
 {
 	stack_t *temp;
 
-	while (stack != NULL)
+	if (!head)
+		return;
+	free(argument_container.input);
+	while (*head != NULL)
 	{
-		temp = stack->next;
-		free(stack);
-		stack = temp;
+		temp = (*head)->next;
+		free(*head);
+		*head = temp;
 	}
 }
 
