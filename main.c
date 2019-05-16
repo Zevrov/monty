@@ -51,22 +51,20 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"pall", op_pall},
 		{"pint", op_pint},
 		{"pop", op_pop},
-		/**
-		* {"swap", op_swap},
-		* {"add", op_add},
-		*/
+		{"swap", op_swap},
+		{"add", op_add},
 		{"nop", op_nop},
 		{"\0", NULL}
 	};
 
 	if (command[0] == '#')
 		return;
-	if (strcmp(command, "stack") == 0)
+	if (strcmp(command, "queue") == 0)
 	{
 		argument_container.stack_queue = 1;
 		return;
 	}
-	if (strcmp(command, "queue") == 0)
+	if (strcmp(command, "stack") == 0)
 	{
 		argument_container.stack_queue = 1;
 		return;

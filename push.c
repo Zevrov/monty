@@ -11,21 +11,21 @@ void nasus(stack_t **stack, stack_t *fresh)
 	fresh->n = atoi(argument_container.arguments);
 	if (*stack == NULL)
 	{
-		fresh->prev = NULL;
-		fresh->next = NULL;
 		*stack = fresh;
+		fresh->next = NULL;
+		fresh->prev = NULL;
 	}
 	else
 	{
 		(*stack)->prev = fresh;
-		fresh->next = *stack;
-		fresh->prev = NULL;
+		fresh->prev = *stack;
+		fresh->next = NULL;
 		*stack = fresh;
 	}
 }
 
 /**
- * veigar - FIFO data also called queue
+ * veigar - FIFO data also called queue still working on edge cases
  * @stack: the memory
  * @fresh: memory to be added
  */
@@ -50,7 +50,7 @@ void veigar(stack_t **stack, stack_t *fresh)
 }
 
 /**
- * op_push - pushes integers to the stack or queue
+ * op_push - pushes integers to the stack or queue still working on edge cases
  * @stack: the memory
  * @line_number: the line
  */
