@@ -9,7 +9,7 @@ void op_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (*stack == NULL || stack == NULL)
+	if (!stack || !*stack)
 	{
 		printf("L%u: can't pop an empty stack\n", line_number);
 		free_stack(stack);

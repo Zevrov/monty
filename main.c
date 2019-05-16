@@ -69,7 +69,6 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		argument_container.stack_queue = 1;
 		return;
 	}
-
 	while (codes[index].opcode != NULL)
 	{
 		if (strcmp(codes[index].opcode, command) == 0)

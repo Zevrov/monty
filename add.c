@@ -11,7 +11,7 @@ void op_add(stack_t **stack, unsigned int line_number)
 	stack_t *temp = NULL;
 	int sum = 0;
 
-	if ((*stack)->next == NULL || *stack == NULL || stack == NULL)
+	if (!(*stack)->next || !*stack || !stack)
 	{
 		printf("L%d: can't add, stack too short\n", line_number);
 		free_stack(stack);
