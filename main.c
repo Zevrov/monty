@@ -53,7 +53,11 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"pop", op_pop},
 		{"swap", op_swap},
 		{"add", op_add},
+		{"sub", op_sub},
+		{"div", op_sub},
+		{"mul", op_mul},
 		{"nop", op_nop},
+		{"mod", op_mod},
 		{"\0", NULL}
 	};
 
