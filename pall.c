@@ -7,6 +7,7 @@
 void op_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
+
 	(void)line_number;
 	if (!*stack)
 		return;

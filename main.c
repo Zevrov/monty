@@ -82,6 +82,5 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 	}
 	printf("L%d: unknown instruction %s\n", line_number, command);
 	free_stack(stack);
-	fclose(argument_container.file);
 	exit(EXIT_FAILURE);
 }

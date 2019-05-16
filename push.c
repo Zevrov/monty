@@ -72,7 +72,6 @@ void op_push(stack_t **stack, unsigned int line_number)
 	{
 		printf("Error: malloc failed\n");
 		free_stack(stack);
-		fclose(argument_container.file);
 		exit(EXIT_FAILURE);
 	}
 	if (argument_container.stack_queue)
