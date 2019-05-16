@@ -17,6 +17,10 @@ int main(int argc, char **argv)
 	return(EXIT_SUCCESS);
 }
 
+/**
+* free_stack - frees memory in the stack
+* @head: the first node
+*/
 void free_stack(stack_t **head)
 {
 	stack_t *temp;
@@ -34,7 +38,7 @@ void free_stack(stack_t **head)
 }
 
 /*
-* g_opcode - gets the correct function
+* get_opcode - gets the correct function
 * @stack: the stack
 * @line_number: the line_number
 * @command: the command being searched for
@@ -52,6 +56,19 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"nop", op_nop},
 		{"\0", NULL}
 	};
+
+	if (command[0] == '#')
+		return;
+	if (strcmp(command, "stack") == 0)
+	{
+		argument_container.stack_queue = 1;
+		return;
+	}
+	if (strcmp(command, "queue") == 0)
+	{
+		argument_container.stack_queue = 1;
+		return;
+	}
 	while (codes[index].opcode != NULL)
 	{
 		if (strcmp(codes[index].opcode, command) == 0)
