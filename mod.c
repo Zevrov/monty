@@ -20,7 +20,7 @@ void op_mod(stack_t **stack, unsigned int line_number)
 	if (temp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
-		exit_free(*stack);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	math = temp->next->n % temp->n;
