@@ -18,6 +18,6 @@ void op_swap(stack_t **stack, unsigned int line_number)
 	temp = *stack;
 	container = temp->n;
 	temp->n = container;
-	container->n = temp->next->n;
+	temp->n = temp->next->n;
 	temp->next->n = container;
 }
