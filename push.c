@@ -34,7 +34,8 @@ void veigar(stack_t **stack, stack_t *fresh)
 	stack_t *container;
 
 	fresh->n = atoi(argument_container.arguments);
-	if (*stack == NULL)
+	fresh->next = NULL;
+	if (!*stack)
 	{
 		fresh->prev = NULL;
 		*stack = fresh;
