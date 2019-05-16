@@ -1,10 +1,11 @@
 #include "monty.h"
 
 /**
- *
- *
+ * is_num - checks if something is a number
+ * @str: the string being checked
+ * Return: 0 if num, 1 if not
  */
-int isnum(char *str)
+int is_num(char *str)
 {
 	if (str == NULL || *str == '\0')
 		return (0);
@@ -20,60 +21,71 @@ int isnum(char *str)
 }
 
 /**
- *
- *
- *
+ * nasus - LIFO data also called a stack
+ * @stack: the memory
+ * @fresh: memory to be added to the stack
  */
-void nasus(stack_t **stack, stack_t *new)
+void nasus(stack_t **stack, stack_t *fresh)
 {
-	new->n = atoi(argument_container.arguments);
+	fresh->n = atoi(argument_container.arguments);
 	if (*stack == NULL)
 	{
-		new->prev = NULL;
-		new->next = NULL;
-		*stack = new;
+		fresh->prev = NULL;
+		fresh->next = NULL;
+		*stack = fresh;
 	}
 	else
 	{
-		(*stack)->prev = new;
-		new->next = *stack;
-		new->prev = NULL;
-		*stack = new;
+		(*stack)->prev = fresh;
+		fresh->next = *stack;
+		fresh->prev = NULL;
+		*stack = fresh;
 	}
 }
 
-void veigar(stack_t **stack, stack_t *new)
+/**
+ * veigar - FIFO data also called queue
+ * @stack: the memory
+ * @fresh: memory to be added
+ */
+void veigar(stack_t **stack, stack_t *fresh)
 {
 	stack_t *container;
 
-	new->n = atoi(argument_container.arguments);
+	fresh->n = atoi(argument_container.arguments);
 	if (*stack == NULL)
 	{
-		new->prev = NULL;
-		*stack = new;
+		fresh->prev = NULL;
+		*stack = fresh;
 	}
 	else
 	{
-		(*stack)->prev = new;
-		new->next = *stack;
-		new->prev = NULL;
-		*stack = new;
+		container = *stack;
+		while (container->next != NULL)
+			container = container->next;
+		container->next = fresh;
+		fresh->prev = container;
 	}
 }
 
+/**
+ * op_push - pushes integers to the stack or queue
+ * @stack: the memory
+ * @line_number: the line
+ */
 void op_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *fresh;
 
 	if (stack == NULL)
 		exit(EXIT_FAILURE);
-	if (!(isnum(argument_container.arguments)))
+	if (!(is_num(argument_container.arguments)))
 	{
-		printf("L%u: usage: push integer\n", line_num);
+		printf("L%u: usage: push integer\n", line_number);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	fresh = mallc(sizeof(stack_t));
+	fresh = malloc(sizeof(stack_t));
 	if (!fresh)
 	{
 		printf("Error: malloc failed\n");

@@ -1,10 +1,10 @@
 #include "monty.h"
 
 /**
-* create_buffer - creates the buffer to parse through files
+* create_buff - creates the buffer to parse through files
 * @file_name: name of the file
 */
-int create_buff(char *file_name)
+void create_buff(char *file_name)
 {
 	char *str = NULL;
 	char *command = NULL;
@@ -36,7 +36,7 @@ int create_buff(char *file_name)
 			continue;
 		}
 		argument_container.arguments = strtok(NULL, "\n\t ");
-		get_opcode(command, line, &stack);
+		get_opcode(&stack, line, command);
 		line++;
 	}
 	free_stack(&stack);
