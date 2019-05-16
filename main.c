@@ -13,12 +13,12 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	mbuff(argv[1]);
-	free_stack(stack);
+	create_buff(argv[1]);
+	free_stack(&stack);
 	return(EXIT_SUCCESS)
 }
 
-void free_stack(stack_t *stack)
+void free_stack(stack_t **head)
 {
 	stack_t *temp;
 
@@ -28,4 +28,37 @@ void free_stack(stack_t *stack)
 		free(stack);
 		stack = temp;
 	}
+}
+
+/*
+* g_opcode - gets the correct function
+* @stack: the stack
+* @line_number: the line_number
+* @command: the command being searched for
+*/
+void get_opcode(stack_t **stack, unsigned int line_number, char *command)
+{
+	int index = 0;
+	instruction_t codes[] = {
+		{"push", push},
+		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"nop", nop},
+		{"\0", NULL}
+	};
+	while (codes[index].opcode != NULL)
+	{
+		if (strcmp(globes.command, commands[index].opcode) == 0)
+		{
+			codes[index].f(stack, line_number);
+			return;
+		}
+		index++;
+	}
+	printf("L%d: unknown instruction %s\n", line_num, command);
+	free_stack(stack);
+	exit(EXIT_FAILURE);
 }

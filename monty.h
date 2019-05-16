@@ -42,14 +42,25 @@ typedef struct instruction_s
 
 /**
  * struct GlobalStruct - contains all globals
- * @data: int for push
+ * @arg: arguments
+ * @input: the input
+ * @stack_queue: the stack or queue
+ * @file: the file
  */
-struct GlobalStruct
+struct Global_struct
 {
-	int data;
-	FILE *fm;
-} globes;
+	char *arguments;
+	char *input;
+	int stack_queue;
+	FILE *file;
+} global_variables;
 
+extern global_variables argument_container;
+global_variables argument_container;
+
+void free_stack(stack_t **head);
+void get_opcode(stack_t **stack, unsigned int line_number, char *command);
+int create_buff(char *f_name);
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
 void op_pint(stack_t **stack, unsigned int line_number);
