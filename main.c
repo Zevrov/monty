@@ -1,17 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "monty.h"
-
-/**
-* op_nop - no action
-* @stack: nope
-* @line: nope
-*/
-void op_nop(stack_t **stack, unsigned int line_number)
-{
-	(void)stack;
-	(void)line_number;
-}
 
 /**
 * main - exec Monty code
@@ -21,6 +8,12 @@ void op_nop(stack_t **stack, unsigned int line_number)
 */
 int main(int argc, char *argv[])
 {
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	mbuff(argv[1]);
 	free_stack(stack);
 	return(EXIT_SUCCESS)
 }
