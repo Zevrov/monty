@@ -17,7 +17,13 @@ void op_div(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	temp = *stack;
-	math = temp->n / temp->next->n;
+	if (temp->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit_free(*stack);
+		exit(EXIT_FAILURE);
+	}
+	math = temp->next->n / temp->n;
 	op_pop(stack, line_number);
 	(*stack)->n = math;
 }
