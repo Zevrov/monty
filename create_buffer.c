@@ -14,7 +14,7 @@ int create_buff(char *file_name)
 	FILE *file;
 
 	file = fopen(file_name, "r");
-	if (!file)
+	if (file == NULL)
 	{
 		printf("Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
@@ -26,8 +26,8 @@ int create_buff(char *file_name)
 		argument_container.input = str;
 		if (*str == '\n')
 		{
-				line++;
-				continue;
+			line++;
+			continue;
 		}
 		command = strtok(str, "\n\t ");
 		if (command == NULL)
