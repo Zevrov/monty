@@ -17,7 +17,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	fresh = malloc(sizeof(stack_t));
-	if (!fresh)
+	if (fresh == NULL)
 	{
 		printf("Error: malloc failed\n");
 		free_stack(stack);

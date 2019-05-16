@@ -7,17 +7,17 @@
 void nasus(stack_t **stack, stack_t *fresh)
 {
 	fresh->n = atoi(argument_container.arguments);
-	if (*stack == NULL)
+	if (!*stack)
 	{
-		*stack = fresh;
-		fresh->next = NULL;
 		fresh->prev = NULL;
+		fresh->next = NULL;
+		*stack = fresh;
 	}
 	else
 	{
 		(*stack)->prev = fresh;
-		fresh->prev = *stack;
-		fresh->next = NULL;
+		fresh->next = *stack;
+		fresh->prev = NULL;
 		*stack = fresh;
 	}
 }
