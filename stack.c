@@ -1,3 +1,4 @@
+#include "monty.h"
 /**
  * nasus - LIFO data also called a stack
  * @stack: the memory
