@@ -1,3 +1,8 @@
+#ifndef _MONTY_H_
+#define _MONTY_H_
+
+#include <stdio.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -34,3 +39,5 @@ void op_pint(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
 void op_swap(stack_t **stack, unsigned int line_number);
 void op_nop(stack_t **stack, unsigned int line_number);
+
+#endif /* Life of Brian */
