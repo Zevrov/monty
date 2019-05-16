@@ -23,6 +23,8 @@ void op_div(stack_t **stack, unsigned int line_number)
 	}
 	x = (*stack)->n;
 	y = (*stack)->next->n;
-	op_pop(stack, line_number);
+	*stack = (*stack)->next;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
 	(*stack)->n = y / x;
 }
