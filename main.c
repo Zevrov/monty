@@ -7,8 +7,11 @@
 * @stack: nope
 * @line: nope
 */
-void op_nop(stack_t **stack, unsigned int line)
-{ (void)stack, (void)line; }
+void op_nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
 
 /**
 * main - exec Monty code
@@ -18,14 +21,18 @@ void op_nop(stack_t **stack, unsigned int line)
 */
 int main(int argc, char *argv[])
 {
-	FILE *file;
+	free_stack(stack);
+	return(EXIT_SUCCESS)
+}
 
-	if (argc != 2)
-		fail_special(ARGS, NULL, 0);
-	file = parse_open(argv[1]);
-	while (parse_line(file) != -1)
-		;
-	fclose(file);
-	list_free();
-	return (EXIT_SUCCESS);
+void free_stack(stack_t *stack)
+{
+	stack_t *temp;
+
+	while (stack != NULL)
+	{
+		temp = stack->next;
+		free(stack);
+		stack = temp;
+	}
 }
