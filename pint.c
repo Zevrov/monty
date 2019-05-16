@@ -6,13 +6,11 @@
 * @stack: the memory
 * @line_number: the line
 */
-void op_pint(stack_t **stack, unsigned int line_number);
+void op_pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t	*temp;
-
 	if (stack == NULL || *stack == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", line_num);
+		printf("L%d: can't pint, stack empty\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", (*stack)->n);
