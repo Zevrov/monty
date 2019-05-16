@@ -36,7 +36,7 @@ int create_buff(char *file_name)
 			continue;
 		}
 		argument_container.arguments = strtok(NULL, "\n\t ");
-		get_opcode(command, line, &stack);
+		get_opcode(&stack, line, command);
 		line++;
 	}
 	free_stack(&stack)
