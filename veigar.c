@@ -7,7 +7,7 @@
 */
 void veigar(stack_t **stack, stack_t *fresh)
 {
-	stack_t temp;
+	stack_t *temp;
 
 	fresh->next = NULL;
 	fresh->n = atoi(argument_container.arguments);

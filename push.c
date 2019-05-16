@@ -23,8 +23,8 @@ void op_push(stack_t **stack, unsigned int line_number)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
+	if (argument_container.stack_queue = 1)
+		nasus(stack, fresh);
+	else
+		veigar(stack, fresh);
 }
-if (argument_container.stack_queue = 1)
-	nasus(stack, fresh);
-else
-	veigar(stack, fresh);
