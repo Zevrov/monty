@@ -20,7 +20,6 @@ void create_buff(char *file_name)
 		exit(EXIT_FAILURE);
 	}
 	argument_container.file = file;
-	argument_container.stack_queue = 1;
 	while (getline(&str, &size, file) != -1)
 	{
 		argument_container.input = str;

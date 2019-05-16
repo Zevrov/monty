@@ -51,7 +51,6 @@ typedef struct Global_struct
 {
 	char *arguments;
 	char *input;
-	int stack_queue;
 	FILE *file;
 } global_variables;
 
@@ -59,8 +58,6 @@ extern global_variables argument_container;
 global_variables argument_container;
 
 int isnum(char *str);
-void nasus(stack_t **stack, stack_t *fresh);
-void veigar(stack_t **stack, stack_t *fresh);
 void free_stack(stack_t **head);
 void get_opcode(stack_t **stack, unsigned int line_number, char *command);
 void create_buff(char *f_name);

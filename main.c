@@ -63,6 +63,7 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 
 	if (command[0] == '#')
 		return;
+<<<<<<< HEAD
 	if (strcmp(command, "queue") == 0)
 	{
 		argument_container.stack_queue = 0;
@@ -73,6 +74,8 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		argument_container.stack_queue = 1;
 		return;
 	}
+=======
+>>>>>>> 103aedc5d000e00283c9dd1a51d8e15b804f2645
 	while (codes[index].opcode != NULL)
 	{
 		if (strcmp(codes[index].opcode, command) == 0)
