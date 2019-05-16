@@ -59,7 +59,7 @@ extern global_variables argument_container;
 global_variables argument_container;
 
 void free_stack(stack_t **head);
-void get_opcode(stack_t **stack, unsigned int line_number, char *command);
+void get_opcode(char *command, unsigned int line_number, stack_t **stack);
 int create_buff(char *f_name);
 void op_push(stack_t **stack, unsigned int line_number);
 void op_pall(stack_t **stack, unsigned int line_number);
