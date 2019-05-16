@@ -30,7 +30,7 @@ int create_buff(char *file_name)
 				continue;
 		}
 		command = strtok(str, "\n\t ");
-		if (!command)
+		if (command == NULL)
 		{
 			line++;
 			continue;
