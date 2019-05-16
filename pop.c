@@ -7,7 +7,7 @@
 */
 void op_pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp;
+	stack_t *temp = *stack;
 
 	if (!stack || !*stack)
 	{
@@ -15,10 +15,15 @@ void op_pop(stack_t **stack, unsigned int line_number)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	temp = (*stack)->next;
-	free(*stack);
-	*stack = temp;
-	if (*stack == NULL)
-		return;
-	(*stack)->prev = NULL;
+	if (!temp->next)
+	{
+		free(*stack);
+		*stack = NULL;
+	}
+	else
+	{
+		(*stack) = (*stack)->next;
+		(*stack)->prev = NULL;
+		free(temp);
+	}
 }
