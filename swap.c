@@ -7,7 +7,6 @@
 void op_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = NULL;
-	int container = 0;
 
 	if ((*stack)->next == NULL || *stack == NULL || stack == NULL)
 	{
@@ -15,9 +14,7 @@ void op_swap(stack_t **stack, unsigned int line_number)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	temp = *stack;
-	container = temp->n;
-	temp->n = container;
-	temp->n = temp->next->n;
-	temp->next->n = container;
+	temp = *stack->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = temp;
 }
