@@ -7,7 +7,7 @@
  */
 int isnum(char *str)
 {
-	if (*str == '\0' || str == NULL)
+	if (str == NULL || *str == '\0')
 		return (0);
 	if (*str == '-')
 		str++;
