@@ -21,11 +21,11 @@ void free_stack(stack_t **head)
 {
 	stack_t *temp;
 
-	if (!head)
+	if (head == NULL)
 		return;
 	free(argument_container.input);
 	fclose(argument_container.file);
-	while (*head == NULL)
+	while (*head != NULL)
 	{
 		temp = (*head)->next;
 		free(*head);
