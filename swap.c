@@ -1,6 +1,7 @@
 #include "monty.h"
 /**
-* op_swap - swaps the top two elements of the stack. still working on edge cases
+* op_swap - swaps the top two elements of the stack.
+* still working on edge cases
 * @stack: the memory
 * @line_number: the line
 */

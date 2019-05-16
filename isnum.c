@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * isnum - checks if something is a number needed to check multiple digits and negative numbers
+ * isnum - checks if something is a number
+ * needed to check multiple digits and negative numbers
  * @str: the string being checked
  * Return: 0 if num, 1 if not
  */

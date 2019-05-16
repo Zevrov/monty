@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-* op_sub - divides the top two elements of the stack,
+* op_div - divides the top two elements of the stack,
 * and combines them into one node.
 * @stack: the memory
 * @line_number: the line

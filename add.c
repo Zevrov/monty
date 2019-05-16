@@ -9,7 +9,7 @@
 void op_add(stack_t **stack, unsigned int line_number)
 {
 	int x, y;
-	
+
 	if (!(*stack)->next || !*stack || !stack)
 	{
 		printf("L%d: can't add, stack too short\n", line_number);

@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
-* op_sub - mods the top two elements of the stack,
+* op_mod - mods the top two elements of the stack,
 * and combines them into one node.
 * @stack: the memory
 * @line_number: the line
