@@ -59,16 +59,17 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 
 	if (command[0] == '#')
 		return;
-	if (strcmp(command, "queue") == 0)
-	{
-		argument_container.stack_queue = 1;
-		return;
-	}
 	if (strcmp(command, "stack") == 0)
 	{
 		argument_container.stack_queue = 1;
 		return;
 	}
+	if (strcmp(command, "queue") == 0)
+	{
+		argument_container.stack_queue = 1;
+		return;
+	}
+
 	while (codes[index].opcode != NULL)
 	{
 		if (strcmp(codes[index].opcode, command) == 0)
