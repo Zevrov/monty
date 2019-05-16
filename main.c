@@ -42,18 +42,18 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 {
 	int index = 0;
 	instruction_t codes[] = {
-		{"push", op_push},
+		/*{"push", op_push},
 		{"pall", op_pall},
 		{"pint", op_pint},
 		{"pop", op_pop},
 		{"swap", op_swap},
-		{"add", op_add},
+		{"add", op_add},*/
 		{"nop", op_nop},
 		{"\0", NULL}
 	};
 	while (codes[index].opcode != NULL)
 	{
-		if (strcmp(global_variables.command, commands[index].opcode) == 0)
+		if (strcmp(codes[index].opcode, command) == 0)
 		{
 			codes[index].f(stack, line_number);
 			return;
