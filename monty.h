@@ -58,6 +58,7 @@ typedef struct Global_struct
 extern global_variables argument_container;
 global_variables argument_container;
 
+int isnum(char *str);
 void nasus(stack_t **stack, stack_t *fresh);
 void veigar(stack_t **stack, stack_t *fresh);
 void free_stack(stack_t **head);

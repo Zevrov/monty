@@ -60,7 +60,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 
 	if (!stack)
 		exit(EXIT_FAILURE);
-	if (!(is_num(argument_container.arguments)))
+	if (!(isnum(argument_container.arguments)))
 	{
 		printf("L%u: usage: push integer\n", line_number);
 		free_stack(stack);
