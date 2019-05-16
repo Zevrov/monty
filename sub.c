@@ -7,8 +7,7 @@
 */
 void op_sub(stack_t **stack, unsigned int line_number)
 {
-	stack_t *temp = NULL;
-	int math = 0;
+	int x, y;
 
 	if (!(*stack)->next || !*stack || !stack)
 	{
@@ -16,8 +15,8 @@ void op_sub(stack_t **stack, unsigned int line_number)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	temp = *stack;
-	math = temp->next->n - temp->n;
+	x = (*stack)->n;
+	y = (*stack)->next->n;
 	op_pop(stack, line_number);
-	(*stack)->n = math;
+	(*stack)->n = y - x;
 }
