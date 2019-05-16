@@ -7,7 +7,7 @@
 */
 void op_pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *next = NULL;
+	stack_t *node;
 
 	if (stack == NULL || *stack == NULL)
 	{
@@ -16,9 +16,9 @@ void op_pop(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	next = (*stack)->next;
+	node = (*stack)->next;
 	free(*stack);
-	*stack = next;
+	*stack = node;
 	if (!*stack)
 		return;
 	(*stack)->prev = NULL;
