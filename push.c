@@ -1,24 +1,5 @@
 #include "monty.h"
 
-/**
- * is_num - checks if something is a number
- * @str: the string being checked
- * Return: 0 if num, 1 if not
- */
-int is_num(char *str)
-{
-	if (str == NULL || *str == '\0')
-		return (0);
-	if (*str == '-')
-		str++;
-	while (*str)
-	{
-		if (!isdigit(*str))
-			return (0);
-		str++;
-	}
-	return (1);
-}
 
 /**
  * nasus - LIFO data also called a stack
@@ -77,12 +58,13 @@ void op_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *fresh;
 
-	if (stack == NULL)
+	if (!stack)
 		exit(EXIT_FAILURE);
 	if (!(is_num(argument_container.arguments)))
 	{
 		printf("L%u: usage: push integer\n", line_number);
 		free_stack(stack);
+		fclose(argument_container.file);
 		exit(EXIT_FAILURE);
 	}
 	fresh = malloc(sizeof(stack_t));
@@ -90,6 +72,7 @@ void op_push(stack_t **stack, unsigned int line_number)
 	{
 		printf("Error: malloc failed\n");
 		free_stack(stack);
+		fclose(argument_container.file);
 		exit(EXIT_FAILURE);
 	}
 	if (argument_container.stack_queue)
@@ -97,9 +80,3 @@ void op_push(stack_t **stack, unsigned int line_number)
 	else
 		veigar(stack, fresh);
 }
-
-
-
-
-
-

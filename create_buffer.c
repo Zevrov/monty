@@ -14,7 +14,7 @@ void create_buff(char *file_name)
 	FILE *file;
 
 	file = fopen(file_name, "r");
-	if (file == NULL)
+	if (!file)
 	{
 		printf("Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
@@ -29,15 +29,16 @@ void create_buff(char *file_name)
 			line++;
 			continue;
 		}
-		command = strtok(str, "\n\t ");
-		if (command == NULL)
+		command = strtok(str, " \t\n");
+		if (!command)
 		{
 			line++;
 			continue;
 		}
-		argument_container.arguments = strtok(NULL, "\n\t ");
+		argument_container.arguments = strtok(NULL, " \t\n");
 		get_opcode(&stack, line, command);
 		line++;
 	}
 	free_stack(&stack);
+	fclose(argument_container.file);
 }

@@ -4,11 +4,10 @@
 * @stack: the stack
 * @line_number: the line
 */
-void op_pall(stack_t **stack, unsigned int line_number)
+void op_pall(stack_t **stack)
 {
 	stack_t *temp;
 
-	(void)line_number;
 	if (!*stack)
 		return;
 	temp = *stack;

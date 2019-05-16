@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	create_buff(argv[1]);
+	fclose(argument_container.file);
 	return (EXIT_SUCCESS);
 }
 
@@ -25,10 +26,9 @@ void free_stack(stack_t **head)
 {
 	stack_t *temp;
 
-	if (head == NULL)
+	if (!head)
 		return;
 	free(argument_container.input);
-	fclose(argument_container.file);
 	while (*head != NULL)
 	{
 		temp = (*head)->next;
@@ -82,5 +82,6 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 	}
 	printf("L%d: unknown instruction %s\n", line_number, command);
 	free_stack(stack);
+	fclose(argument_container.file);
 	exit(EXIT_FAILURE);
 }

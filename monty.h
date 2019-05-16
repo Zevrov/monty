@@ -64,7 +64,7 @@ void free_stack(stack_t **head);
 void get_opcode(stack_t **stack, unsigned int line_number, char *command);
 void create_buff(char *f_name);
 void op_push(stack_t **stack, unsigned int line_number);
-void op_pall(stack_t **stack, unsigned int line_number);
+void op_pall(stack_t **stack);
 void op_pint(stack_t **stack, unsigned int line_number);
 void op_pop(stack_t **stack, unsigned int line_number);
 void op_swap(stack_t **stack, unsigned int line_number);
