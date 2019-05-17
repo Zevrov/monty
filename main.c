@@ -6,7 +6,7 @@
 * @argv: vector of command arguments
 * Return: EXIT_SUCCESS on success, EXIT_FAILURE on fail
 */
-int main(int argc, char **argv[])
+int main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
