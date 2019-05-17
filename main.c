@@ -58,6 +58,8 @@ void get_opcode(stack_t **stack, unsigned int line_number, char *command)
 		{"mul", op_mul},
 		{"nop", op_nop},
 		{"mod", op_mod},
+		{"stack", nasus},
+		{"queue", veigar},
 		{"\0", NULL}
 	};
 
